@@ -69,7 +69,7 @@ const Header = () => {
         </div>
 
         {/* Dark Mode Button */}
-        <div className='absolute md:-right-5 right-12'>
+        <div className='absolute md:right-60 right-16'>
           <MdDarkMode size={26} onClick={HandleDarkMode} className='cursor-pointer' />
         </div>
       </div>
