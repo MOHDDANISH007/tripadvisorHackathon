@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ImageData from '@/asset/logoImage/logo.js'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { RiGlobalLine } from 'react-icons/ri'
@@ -15,6 +15,15 @@ const Header = () => {
   const HandleDarkMode = () => {
     setDark(!dark)
   }
+
+  // Apply global dark mode class to body when dark mode is toggled
+  useEffect(() => {
+    if (dark) {
+      document.body.classList.add('dark'); // Add dark class to body
+    } else {
+      document.body.classList.remove('dark'); // Remove dark class from body
+    }
+  }, [dark]); // This effect runs every time `dark` state changes
 
   return (
     <header className={`fixed top-0 left-0 right-0 backdrop-blur-md z-50 shadow-sm ${dark ? 'bg-black/80 text-white' : 'bg-white/80 text-black'}`}>
