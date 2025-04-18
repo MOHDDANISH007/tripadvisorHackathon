@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ['dynamic-media-cdn.tripadvisor.com']
+  }
+}
 
-export default nextConfig;
+export default nextConfig

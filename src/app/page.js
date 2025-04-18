@@ -1,10 +1,12 @@
-import Image from "next/image";
-import HeroSection from "@/components/subHeroSection/hero.jsx";
-export default function Home() {
-  return(
+import Image from 'next/image'
+import HeroSection from '@/components/subHeroSection/hero.jsx'
+import MainHeroSection from '@/components/mainheroSection/page.jsx'
+export default function Home () {
+  return (
     <main>
       <HeroSection />
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ducimus perferendis, explicabo alias numquam similique fugiat facere ut beatae inventore odio porro dolor, quae sed iure, assumenda suscipit quas amet corrupti earum? Necessitatibus assumenda, neque voluptatum perferendis placeat recusandae, voluptates provident numquam modi esse temporibus possimus explicabo delectus quasi odio eos, laudantium incidunt amet. Provident atque pariatur sunt doloremque quaerat cupiditate porro sint possimus ut velit. Obcaecati dicta voluptates consectetur? Nemo beatae eveniet fugiat! Laudantium quibusdam consequuntur itaque qui adipisci sapiente at velit quisquam fugiat dolorum? Nulla cumque libero dicta repudiandae similique molestiae enim, totam nihil id placeat repellendus! Inventore vel magni quibusdam nam laudantium? Iusto officiis laborum asperiores impedit hic ex eius maiores perspiciatis aliquid fugit quas commodi fugiat adipisci provident, omnis doloremque fuga sint accusantium distinctio, reiciendis quos illo veritatis aperiam laudantium? Harum, magni ea dolor in culpa odit. Sint deleniti, fugit asperiores aliquid voluptates velit provident nesciunt dolorem nam a debitis ducimus corporis cumque earum quisquam in iusto iure. Consequatur, labore assumenda numquam quasi consectetur illo reiciendis ullam officia perferendis nesciunt totam facilis, quibusdam sequi aut optio architecto ducimus magnam quae velit inventore repellendus accusantium. Velit, cumque adipisci optio necessitatibus possimus eius sapiente veniam nesciunt repellat commodi?</h1>
+      <MainHeroSection />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro voluptate accusamus rem repellendus, corporis est similique ut quidem dolore tenetur, vitae excepturi quos tempore illum eos commodi quae, nesciunt ducimus. Unde eum blanditiis exercitationem dolorem, temporibus quas doloribus deserunt magnam quidem, impedit voluptate aperiam quaerat maxime esse dignissimos, architecto quo commodi? Cum veniam officia repellendus at, sequi fuga cupiditate beatae voluptas soluta, accusantium numquam officiis nam, perspiciatis maiores rerum necessitatibus impedit vitae nulla suscipit. Inventore repudiandae voluptate, qui animi sint quod voluptatum. Sequi repudiandae beatae in quae eos ipsum, vel, perspiciatis maxime totam officia accusamus dolor quibusdam adipisci, modi ratione minima dignissimos placeat perferendis eius? Placeat eveniet eum ea, quos neque qui quibusdam odio ex corporis facere est odit perferendis sit tenetur commodi expedita, iure dicta et. Nobis nihil, ullam magni nulla pariatur quas optio error! Ratione recusandae voluptate rerum aliquid, hic at numquam consequuntur tenetur corporis alias minima necessitatibus itaque id animi similique doloribus ad sit accusamus fugiat reiciendis quod non libero qui! Quibusdam, quo aspernatur dignissimos quis ipsam est nihil deleniti beatae. Cum magni quaerat numquam, corrupti, dolores sequi, cumque dolorem doloribus ex esse eaque a recusandae deleniti mollitia minus quod deserunt? Blanditiis laborum voluptates quos consequuntur quaerat.
     </main>
   )
 }
