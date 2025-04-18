@@ -9,7 +9,7 @@ import { VscAccount } from 'react-icons/vsc'
 import { MdDarkMode } from 'react-icons/md'
 
 const Header = () => {
-  const menuData = ['Discover', 'Trip', 'Review', 'Forums']
+  const menuData = ['Discover', 'Trips', 'Review', 'Forums','Gallery','Ask a local']
   const [dark, setDark] = React.useState(false);
 
   const HandleDarkMode = () => {
@@ -27,38 +27,42 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 backdrop-blur-md z-50 shadow-sm ${dark ? 'bg-black/80 text-white' : 'bg-white/80 text-black'}`}>
-      <div className='relative flex items-center justify-between px-4 py-3 max-w-[1280px] mx-auto'>
+      <div className='relative flex items-center justify-between px-4 py-2 max-w-[1280px] mx-auto'>
         {/* Hamburger (mobile) */}
         <div className='md:hidden absolute left-4 top-1/2 -translate-y-1/2'>
           <RxHamburgerMenu size={26} className={dark ? 'text-white' : 'text-gray-700'} />
         </div>
 
         {/* Logo */}
-        <div className='mx-auto md:mx-0 flex-shrink-0'>
-          <Image src={ImageData.image} alt='logo' width={160} height={160} />
+        <div className='pl-12 mx-auto md:mx-0 flex-shrink-0 '>
+          <Image src={ImageData.image} alt='logo' width={190} height={190} />
         </div>
 
         {/* Navigation */}
-        <div className='hidden md:flex flex-1 justify-center gap-8'>
+        <div className='hidden md:flex flex-1 justify-center gap-1'>
           {menuData.map((item, i) => (
-            <p key={i} className={`text-lg font-bold transition-colors cursor-pointer ${dark ? 'text-white' : 'text-black'}`}>
+            <p key={i} className={`text-md font-semibold px-3.5 py-2 rounded-full transition-colors cursor-pointer hover:bg-gray-100 ${dark ? 'text-white' : 'text-black'}`}>
               {item}
             </p>
           ))}
         </div>
 
         {/* Right Side: Desktop Buttons */}
-        <div className='hidden md:flex items-center gap-4'>
+        <div className='hidden md:flex items-center gap-4 pr-5'>
           {/* Currency Button */}
-          <button className={`flex items-center gap-2 px-4 py-2 rounded-full transition ${dark ? 'text-white hover:bg-gray-800' : 'text-gray-700 hover:bg-green-100'}`}>
+          <button className={`flex items-center gap-2 px-4 py-2 rounded-full transition ${dark ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100 cursor-pointer'}`}>
             <RiGlobalLine size={22} />
-            <span className='font-semibold'>| INR</span>
+            <span className='font-semibold'>| USD</span>
           </button>
 
           {/* Sign Button */}
-          <button className='flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold text-lg hover:bg-green-600 transition'>
-            Sign
+          <button className='flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold text-lg hover:bg-neutral-800 transition duration-300 ease-in-out cursor-pointer'>
+            Sign in
           </button>
+           {/* Dark Mode Button */}
+        <div className=''>
+          <MdDarkMode size={26} onClick={HandleDarkMode} className='cursor-pointer' />
+        </div>
         </div>
 
         {/* Mobile View: Account Button */}
@@ -68,10 +72,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Dark Mode Button */}
-        <div className='absolute md:right-60 right-16'>
-          <MdDarkMode size={26} onClick={HandleDarkMode} className='cursor-pointer' />
-        </div>
+       
       </div>
     </header>
   )
