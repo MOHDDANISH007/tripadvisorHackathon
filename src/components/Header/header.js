@@ -27,11 +27,11 @@ const Header = () => {
   // Apply global dark mode class to body when dark mode is toggled
   useEffect(() => {
     if (dark) {
-      document.body.classList.add('dark'); // Add dark class to body
+      document.body.classList.add('dark') // Add dark class to body
     } else {
-      document.body.classList.remove('dark'); // Remove dark class from body
+      document.body.classList.remove('dark') // Remove dark class from body
     }
-  }, [dark]); // This effect runs every time `dark` state changes
+  }, [dark])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,18 +47,21 @@ const Header = () => {
       dark ? 'bg-black text-white' : 'bg-white text-black'
     } ${scrolled ? 'top-0 border-b border-gray-200 shadow-sm' : ''}`}>
       <div className='relative flex items-center justify-between px-4 py-2 max-w-[1280px] mx-auto'>
-        {/* Hamburger (mobile) */}
-        <div className='md:hidden absolute left-4 top-1/2 -translate-y-1/2'>
-          <RxHamburgerMenu size={26} className={dark ? 'text-white' : 'text-gray-700'} />
+        {/* Hamburger (mobile, visible below 1024px) */}
+        <div className='lg:hidden absolute left-4 top-1/2 -translate-y-1/2'>
+          <RxHamburgerMenu
+            size={26}
+            className={dark ? 'text-white' : 'text-gray-700'}
+          />
         </div>
 
-        {/* Logo */}
-        <div className='pl-12 mx-auto md:mx-0 flex-shrink-0 '>
+        {/* Logo (always visible) */}
+        <div className='pl-12 mx-auto md:mx-0 flex-shrink-0'>
           <Image src={ImageData.image} alt='logo' width={190} height={190} />
         </div>
 
-        {/* Navigation */}
-        <div className='hidden md:flex flex-1 justify-center gap-1'>
+        {/* Navigation (visible on screens above 1024px) */}
+        <div className='hidden lg:flex flex-1 justify-center gap-1'>
           {menuData.map((item, i) => (
             <Link key={i} 
            href={item.path} 
@@ -68,32 +71,56 @@ const Header = () => {
           ))}
         </div>
 
-        {/* Right Side: Desktop Buttons */}
+        {/* Right Side: Desktop Buttons (visible above 768px, hidden below 1024px) */}
         <div className='hidden md:flex items-center gap-4 pr-5'>
-          {/* Currency Button */}
-          <button className={`flex items-center gap-2 px-4 py-2 rounded-full transition ${dark ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-gray-100 cursor-pointer'}`}>
-            <RiGlobalLine size={22} />
-            <span className='font-semibold'>| USD</span>
-          </button>
+          {/* Currency Button (only visible on screens larger than 1024px) */}
+          <div className='hidden lg:flex'>
+            <button
+              className={`flex items-center gap-2 px-4 py-2 rounded-full transition ${
+                dark
+                  ? 'text-white hover:bg-gray-800'
+                  : 'text-black hover:bg-gray-100 cursor-pointer'
+              }`}
+            >
+              <RiGlobalLine size={22} />
+              <span className='font-semibold'>| USD</span>
+            </button>
+          </div>
 
           {/* Sign Button */}
           <button className='flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold text-lg hover:bg-neutral-800 transition duration-300 ease-in-out cursor-pointer'>
             Sign in
           </button>
-           {/* Dark Mode Button */}
-        <div className=''>
-          <MdDarkMode size={26} onClick={HandleDarkMode} className='cursor-pointer' />
-        </div>
+
+          {/* Dark Mode Button (always visible) */}
+          <div>
+            <MdDarkMode
+              size={26}
+              onClick={HandleDarkMode}
+              className='cursor-pointer'
+            />
+          </div>
         </div>
 
-        {/* Mobile View: Account Button */}
-        <div className='md:hidden absolute right-4 top-1/2 -translate-y-1/2'>
-          <button className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm transition ${dark ? 'text-white hover:bg-gray-800' : 'text-black hover:bg-green-600'}`}>
+        {/* Mobile View: Account Button (visible below 768px) */}
+        <div className='flex  md:hidden absolute right-4 top-1/2 -translate-y-1/2'>
+          <div className='mt-1'>
+            <MdDarkMode
+              size={26}
+              onClick={HandleDarkMode}
+              className='cursor-pointer'
+            />
+          </div>
+          <button
+            className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm transition ${
+              dark
+                ? 'text-white hover:bg-gray-800'
+                : 'text-black hover:bg-green-600'
+            }`}
+          >
             <VscAccount size={20} />
           </button>
         </div>
-
-       
       </div>
     </header>
   )
