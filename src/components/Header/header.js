@@ -1,16 +1,24 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React, { useEffect ,useState} from 'react'
 import ImageData from '@/asset/logoImage/logo.js'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { RiGlobalLine } from 'react-icons/ri'
 import { VscAccount } from 'react-icons/vsc'
 import { MdDarkMode } from 'react-icons/md'
+import Link from 'next/link'
 
 const Header = () => {
-  const menuData = ['Discover', 'Trips', 'Review', 'Forums','Gallery','Ask a local']
-  const [dark, setDark] = React.useState(false);
+  const menuData = [{ name:'Discover', path:'/'},
+    {name:'Trips',path:'/'},
+    {name: 'Review',path:'/'}, 
+    {name: 'Forums',path:'/'},
+    {name: 'Gallery',path:'gallery'},
+    {name: 'Ask a local',path:'askLocal'},]
+    
+  const [dark, setDark] = useState(false);
+  const [scrolled, setScrolled] = useState(false)
 
   const HandleDarkMode = () => {
     setDark(!dark)
@@ -25,8 +33,19 @@ const Header = () => {
     }
   }, [dark]); // This effect runs every time `dark` state changes
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <header className={`fixed top-0 left-0 right-0 backdrop-blur-md z-50 shadow-sm ${dark ? 'bg-black/80 text-white' : 'bg-white/80 text-black'}`}>
+    <header className={`sticky top-0 z-50  ${
+      dark ? 'bg-black text-white' : 'bg-white text-black'
+    } ${scrolled ? 'top-0 border-b border-gray-200 shadow-sm' : ''}`}>
       <div className='relative flex items-center justify-between px-4 py-2 max-w-[1280px] mx-auto'>
         {/* Hamburger (mobile) */}
         <div className='md:hidden absolute left-4 top-1/2 -translate-y-1/2'>
@@ -41,9 +60,11 @@ const Header = () => {
         {/* Navigation */}
         <div className='hidden md:flex flex-1 justify-center gap-1'>
           {menuData.map((item, i) => (
-            <p key={i} className={`text-md font-semibold px-3.5 py-2 rounded-full transition-colors cursor-pointer hover:bg-gray-100 ${dark ? 'text-white' : 'text-black'}`}>
-              {item}
-            </p>
+            <Link key={i} 
+           href={item.path} 
+            className={`text-md font-semibold px-3.5 py-2 rounded-full transition-colors cursor-pointer hover:bg-gray-100 ${dark ? 'text-white' : 'text-black'}`}>
+              {item.name}
+            </Link>
           ))}
         </div>
 
