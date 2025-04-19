@@ -14,11 +14,9 @@ body.dark {
   background-color: #444;
 }
 
-/* .scrollbar-hide::-webkit-scrollbar {
+.scrollbar-hide::-webkit-scrollbar {
   display: none;
-} */
-
-
+}
 
 
 .scrollbar-thin::-webkit-scrollbar {
