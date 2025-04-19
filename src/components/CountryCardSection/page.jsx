@@ -60,13 +60,13 @@ const CountryCardSection = () => {
   }, [])
 
   return (
-    <div className='px-4 md:px-16 py-10 bg-white relative'>
+    <div className='px-4 md:px-16 py-10 bg-white relative card-container'>
       {/* Heading */}
       <div className='mb-5 text-center md:text-left'>
         <h1 className='text-2xl md:text-2xl font-semibold'>
           Explore the world's most stunning seasides
         </h1>
-        <p className='text-md text-gray-600 mt-2'>
+        <p className='text-md text-gray-600 mt-2 card-description'>
           2025's Travellers' Choice Awards Best of the Best Beaches
         </p>
       </div>
@@ -94,7 +94,7 @@ const CountryCardSection = () => {
                 <div className='absolute bottom-0 w-full bg-gradient-to-t from-black/90 to-transparent px-4 py-4 rounded-b-md'>
                   <h2 className='text-3xl font-bold text-white'>{item.title}</h2>
                 </div>
-              </div>    
+              </div>
             </div>
           ))}
         </div>
