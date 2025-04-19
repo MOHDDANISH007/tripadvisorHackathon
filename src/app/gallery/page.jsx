@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Image from "next/image";
+import Logoimage from "../../asset/greenLogo.svg";
+
 
 const UnsplashMasonry = () => {
   const [images, setImages] = useState([])
@@ -59,7 +62,15 @@ const UnsplashMasonry = () => {
     <div className='p-4'>
       {loading ? (
         <div className='flex justify-center items-center min-h-64'>
-          <div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500'></div>
+          
+            <Image
+                      src={Logoimage}
+                      alt="Loading..."
+                      width={48}
+                      height={48}
+                      className="animate-bounce"
+                    />
+          
         </div>
       ) : (
         <>
