@@ -22,7 +22,7 @@ const MoreToExplore = () => {
   return (
     <div className='more-to-explore px-4 md:px-16 py-16 mt-10 w-full bg-[rgb(242,241,236)]'>
       <div>
-        <h1 className='text-4xl font-semibold'>More to explore</h1>
+        <h1 className='text-2xl font-semibold'>More to explore</h1>
 
         <div className='relative mt-5 lg:mt-10'>
           {/* Arrows only on small screens */}
@@ -51,7 +51,7 @@ const MoreToExplore = () => {
           {/* Scrollable on small, wrapped on large */}
           <div
             ref={scrollContainerRef}
-            className='flex gap-6 px-2 scroll-smooth
+            className='flex gap-4 px-1 scroll-smooth
               overflow-x-auto lg:overflow-x-visible 
               scrollbar-hide lg:flex-wrap'
           >
@@ -63,10 +63,10 @@ const MoreToExplore = () => {
                 <div className='relative group'>
                   <Image
                     src={item.image}
-                    width={390}
-                    height={390}
+                    width={365}
+                    height={400}
                     alt={item.title}
-                    className='rounded-lg'
+                    className=' rounded-lg'
                   />
                   <div className='absolute inset-0 bg-white opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-lg'></div>
                 </div>

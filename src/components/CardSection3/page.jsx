@@ -5,14 +5,14 @@ import LogoImage from '@/asset/logoImage/logo.js'
 
 const CardSection3 = () => {
   return (
-    <div className='relative  card-container1 px-4 md:px-16 py-16 mt-10 w-full bg-[rgb(237,238,250)] text-black '>
-      <div className='relative  flex gap-5 p-5 justify-evenly items-center md:flex-row flex-col'>
+    <div className='relative  card-container1 px-4 md:px-16 py-16 w-full  text-black '>
+      <div className='relative  flex gap-5 p-5 justify-evenly items-center md:flex-row flex-col  bg-[rgb(237,238,250)]'>
         {/* Mobile: Sponsored by on top */}
         <div className='relative flex gap-5 justify-center items-center mx-auto md:hidden'>
           <Image
             src={LogoImage.image}
             alt={LogoImage.title}
-            width={140}
+            width={170}
             height={140}
           />
           <h1 className='font-bold text-sm text-gray-400'>
