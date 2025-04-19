@@ -5,8 +5,8 @@ import LogoImage from '@/asset/logoImage/logo.js'
 
 const CardSection3 = () => {
   return (
-    <div className='relative px-4 md:px-16 py-16 mt-10 w-full bg-[rgb(237,238,250)] text-black dark:text-white border-2'>
-      <div className='relative flex gap-5 p-5 justify-evenly items-center md:flex-row flex-col'>
+    <div className='relative  card-container1 px-4 md:px-16 py-16 mt-10 w-full bg-[rgb(237,238,250)] text-black '>
+      <div className='relative  flex gap-5 p-5 justify-evenly items-center md:flex-row flex-col'>
         {/* Mobile: Sponsored by on top */}
         <div className='relative flex gap-5 justify-center items-center mx-auto md:hidden'>
           <Image
