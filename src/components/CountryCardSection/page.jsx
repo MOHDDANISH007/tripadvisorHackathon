@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React from 'react'
 import ImageData from '@/asset/imagesData/section3.json'
 import Image from 'next/image'
@@ -47,7 +47,7 @@ const CountryCardSection = () => {
                 <div className='absolute bottom-0 w-full bg-gradient-to-t from-black/80 to-transparent px-4 py-3 rounded-b-2xl'>
                   <h2 className='text-xl font-bold text-white'>{item.title}</h2>
                 </div>
-              </div>    
+              </div>
             </div>
           ))}
         </div>
@@ -55,19 +55,20 @@ const CountryCardSection = () => {
         {/* Left Arrow - Changed to always be visible */}
         <button
           onClick={scrollLeft}
-          className='flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 z-10
-            w-12 h-12 bg-white/90 border-2 rounded-full 
-            hover:bg-black hover:text-white transition-all duration-300 shadow-lg'
+          className='flex items-center justify-center absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-50
+    w-12 h-12 bg-white/90 border-2 rounded-full 
+    hover:bg-black hover:text-white transition-all duration-300 shadow-lg'
+          style={{ pointerEvents: 'auto' }}
         >
           <IoIosArrowRoundBack size={30} />
         </button>
 
-        {/* Right Arrow - Changed to always be visible */}
         <button
           onClick={scrollRight}
-          className='flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 z-10
-            w-12 h-12 bg-white/90 border-2 rounded-full 
-            hover:bg-black hover:text-white transition-all duration-300 shadow-lg'
+          className='flex items-center justify-center absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-50
+    w-12 h-12 bg-white/90 border-2 rounded-full 
+    hover:bg-black hover:text-white transition-all duration-300 shadow-lg'
+          style={{ pointerEvents: 'auto' }}
         >
           <IoIosArrowRoundForward size={30} />
         </button>
