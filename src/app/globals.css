@@ -6,6 +6,15 @@ body.dark {
   color: white;
 }
 
+.dark .more-to-explore {
+  background-color: #333;
+  color: white;
+}
+
+.dark .card-container .card-description {
+  color: white;
+}
+
 /* Dark Mode for other elements */
 .dark .text-black {
   color: white;
@@ -17,7 +26,6 @@ body.dark {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-
 
 .scrollbar-thin::-webkit-scrollbar {
   height: 6px;
