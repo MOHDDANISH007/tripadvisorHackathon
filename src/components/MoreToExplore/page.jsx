@@ -48,30 +48,30 @@ const MoreToExplore = () => {
             </button>
           </div>
 
-          {/* Scrollable on small, wrapped on large */}
+          {/* Scrollable on small, fixed width items to prevent overflow */}
           <div
             ref={scrollContainerRef}
             className='flex gap-4 px-1 scroll-smooth
-              overflow-x-auto lg:overflow-x-visible 
-              scrollbar-hide lg:flex-wrap'
+              overflow-x-auto lg:flex lg:justify-between
+              scrollbar-hide'
           >
             {ImageData.map((item, index) => (
               <div
                 key={index}
-                className='min-w-[260px] md:min-w-[300px] flex-shrink-0'
+                className='min-w-[260px] md:min-w-[300px] lg:w-[32%] lg:flex-none'
               >
                 <div className='relative group'>
                   <Image
                     src={item.image}
-                    width={365}
-                    height={400}
+                    width={410}
+                    height={300}
                     alt={item.title}
-                    className=' rounded-lg'
+                    className='rounded-lg w-full'
                   />
                   <div className='absolute inset-0 bg-white opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-lg'></div>
                 </div>
 
-                <div className='mt-2 max-w-80'>
+                <div className='mt-2'>
                   <h1 className='text-xl font-semibold text-center'>
                     {item.title}
                   </h1>

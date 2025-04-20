@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { RiHomeLine } from 'react-icons/ri'
 import { BiHotel } from 'react-icons/bi'
 import { CiCamera } from 'react-icons/ci'
@@ -12,10 +12,19 @@ import { CiSearch } from 'react-icons/ci'
 
 const Hero = () => {
   const [activeTab, setActiveTab] = useState('search-all')
+  const searchBarRef = useRef(null)
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId)
   }
+
+  useEffect(() => {
+    // Register the search bar element with the header component
+    if (searchBarRef.current && window.registerSearchBar) {
+      const cleanup = window.registerSearchBar(searchBarRef.current)
+      return cleanup
+    }
+  }, [])
 
   return (
     <div className='flex flex-col gap-5 justify-center items-center mt-15'>
@@ -83,8 +92,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Search bar */}
-      <div className='w-full max-w-4xl px-4'>
+      {/* Search bar - this is the element we'll track for visibility */}
+      <div ref={searchBarRef} className='w-full max-w-4xl px-4'>
         <div className='relative bg-white rounded-full shadow-lg border-2 border-neutral-200'>
           {/* Search Icon */}
           <CiSearch
@@ -100,7 +109,7 @@ const Hero = () => {
           />
 
           {/* Search Button */}
-          <button className='absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#11d98f] cursor-pointer text-black px-8 py-3 rounded-full hover:bg-[#81e5c0]  transition-all duration-200 font-medium'>
+          <button className='absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#11d98f] cursor-pointer text-black px-8 py-3 rounded-full hover:bg-[#81e5c0] transition-all duration-200 font-medium'>
             Search
           </button>
         </div>

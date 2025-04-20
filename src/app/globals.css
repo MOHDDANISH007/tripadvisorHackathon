@@ -1,13 +1,32 @@
 @import 'tailwindcss';
 
+
+
 /* Global CSS */
 body.dark {
+  background-color: #222222;
+  color: white;
+}
+.dark .footer-container{
   background-color: #333;
+}
+.dark .footer-desktop{
   color: white;
 }
 
 .dark .more-to-explore {
   background-color: #333;
+  color: white;
+}
+.dark .footer-button{
+  color: black;
+}
+
+.dark .mobile-footer{
+  background-color: #333;
+  color: white;
+}
+.dark .footer-button1{
   color: white;
 }
 
@@ -33,7 +52,8 @@ body.dark {
   color: white;
 }
 .dark .bg-white {
-  background-color: #444;
+  background-color: #222222;
+  color: white;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

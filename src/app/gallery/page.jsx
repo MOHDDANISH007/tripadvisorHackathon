@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Image from "next/image";
 import Logoimage from "../../asset/greenLogo.svg";
+import conf from "../../conf"
 
 
 const UnsplashMasonry = () => {
@@ -22,7 +23,7 @@ const UnsplashMasonry = () => {
           page: page
         },
         headers: {
-          Authorization: 'Client-ID ORkkM740mRTDFodYABrgKLMITto6zR43F9YamuDxWt8' // Replace with your Unsplash API access key
+          Authorization: `Client-ID ${conf.unsplashAccessKey}` 
         }
       })
 
