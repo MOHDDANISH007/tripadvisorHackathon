@@ -44,7 +44,7 @@ const CardSection3 = () => {
           {/* Desktop: Sponsored by inside content */}
           <div className='hidden md:flex gap-5 justify-center items-center mx-auto'>
             <Image
-              src={LogoImage.image}
+              src={LogoImage.light}
               alt={LogoImage.title}
               width={200}
               height={200}
