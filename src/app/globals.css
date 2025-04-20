@@ -1,8 +1,49 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+
 
 /* Global CSS */
 body.dark {
+  background-color: #222222;
+  color: white;
+}
+.dark .footer-container{
   background-color: #333;
+}
+.dark .footer-desktop{
+  color: white;
+}
+
+.dark .more-to-explore {
+  background-color: #333;
+  color: white;
+}
+.dark .footer-button{
+  color: black;
+}
+
+.dark .mobile-footer{
+  background-color: #333;
+  color: white;
+}
+.dark .footer-button1{
+  color: white;
+}
+
+.dark .card-container .card-description {
+  color: white;
+}
+.dark .card-container1{
+  background-color: #333;
+  color: white;
+}
+
+/* .dark .chat-bubble{
+  color: black;
+} */
+
+.dark .gallery-cards{
+  background-color: black;
   color: white;
 }
 
@@ -11,5 +52,23 @@ body.dark {
   color: white;
 }
 .dark .bg-white {
-  background-color: #444;
+  background-color: #222222;
+  color: white;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #9ca3af; /* gray-400 */
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
 }
