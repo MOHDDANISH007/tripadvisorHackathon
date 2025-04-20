@@ -53,18 +53,18 @@ const MoreToExplore = () => {
             ref={scrollContainerRef}
             className='flex gap-4 px-1 scroll-smooth
               overflow-x-auto lg:overflow-x-visible 
-              scrollbar-hide lg:flex-wrap'
+              scrollbar-hide '
           >
             {ImageData.map((item, index) => (
               <div
                 key={index}
-                className='min-w-[260px] md:min-w-[300px] flex-shrink-0'
+                className='min-w-[260px] md:min-w-[300px] lg:min-w-[410px]'
               >
                 <div className='relative group'>
                   <Image
                     src={item.image}
-                    width={365}
-                    height={400}
+                    width={410}
+                    height={300}
                     alt={item.title}
                     className=' rounded-lg'
                   />
