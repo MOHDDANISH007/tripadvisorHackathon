@@ -10,7 +10,7 @@ const CardSection3 = () => {
         {/* Mobile: Sponsored by on top */}
         <div className='relative flex gap-5 justify-center items-center mx-auto md:hidden'>
           <Image
-            src={LogoImage.image}
+            src={LogoImage.light}
             alt={LogoImage.title}
             width={170}
             height={140}

@@ -153,8 +153,8 @@ const Chat = () => {
     )}
 
     <div
-      className={`p-2 rounded-xl leading-relaxed ${msg.sender === "user"
-          ? "bg-neutral-200 max-w-lg rounded-tr-none"
+      className={`chat-bubble p-2 rounded-xl leading-relaxed ${msg.sender === "user"
+          ? "bg-neutral-200 max-w-lg rounded-tr-none  dark:text-black"
           : "bg-[#16d48e] max-w-lg rounded-tl-none text-white"
         }`}
     >

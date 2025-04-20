@@ -1,8 +1,10 @@
 @import 'tailwindcss';
 
+
+
 /* Global CSS */
 body.dark {
-  background-color: #333;
+  background-color: #222222;
   color: white;
 }
 .dark .footer-container{
@@ -36,12 +38,22 @@ body.dark {
   color: white;
 }
 
+/* .dark .chat-bubble{
+  color: black;
+} */
+
+.dark .gallery-cards{
+  background-color: black;
+  color: white;
+}
+
 /* Dark Mode for other elements */
 .dark .text-black {
   color: white;
 }
 .dark .bg-white {
-  background-color: #444;
+  background-color: #222222;
+  color: white;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
