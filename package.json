@@ -14,7 +14,10 @@
     "appwrite": "^17.0.2",
     "axios": "^1.8.4",
     "framer-motion": "^12.7.4",
+<<<<<<< HEAD
     "marked": "^15.0.8",
+=======
+>>>>>>> master
     "my-app": "file:",
     "next": "15.3.1",
     "react": "^19.0.0",
