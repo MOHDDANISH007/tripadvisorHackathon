@@ -59,7 +59,7 @@ const UnsplashMasonry = () => {
   }
 
   return (
-    <div className='p-4'>
+    <div className='gallery-cards p-4'>
       {loading ? (
         <div className='flex justify-center items-center min-h-64'>
           

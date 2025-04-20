@@ -19,6 +19,15 @@ body.dark {
   color: white;
 }
 
+/* .dark .chat-bubble{
+  color: black;
+} */
+
+.dark .gallery-cards{
+  background-color: black;
+  color: white;
+}
+
 /* Dark Mode for other elements */
 .dark .text-black {
   color: white;
